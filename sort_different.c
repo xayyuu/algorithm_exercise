@@ -1,4 +1,6 @@
 #ifdef _WIN32 || _WIN64
+// http://sourceforge.net/p/predef/wiki/OperatingSystems/
+
 
 #include <stdio.h>
 #include <stdlib.h>
