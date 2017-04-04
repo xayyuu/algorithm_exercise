@@ -1,4 +1,4 @@
-MY DATA STRUCT EXERCISE(2014/8/28):
-	contains common data struct and algorithm.
+MY ALGORITHM EXERCISE(2014/8/28):
+	data struct and algorithm.
 	
 	
