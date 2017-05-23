@@ -3,7 +3,7 @@
 """
 功能：
     实现了选择排序和归并排序。
-    分别为mergesort()和select_sort两个函数。
+    分别为merge_sort()和select_sort两个函数。
     另外简单地测试和对比了两者性能，可以发现当输入数据的size越大，则归并排序性能越好。
     这也符合两者时间复杂度的分析，选择排序是O(n**2),归并排序是O(n*log(n))。
 
@@ -15,6 +15,9 @@ import time
 
 
 def elapse(f):
+    """
+    装饰器，用来打印函数的时间开销。
+    """
     def wrapper(*args, **kw):
         start = time.time()
         f(*args, **kw)
@@ -29,11 +32,6 @@ def swap(lst, i, j):
     lst[j] = tmp
 
 def select_sort(lst):
-    """
-    assume the number bigger than index is unorder, otherwise is order.
-    :param lst:
-    :return:
-    """
     assert lst != []
     lstlen = len(lst)
 
@@ -47,11 +45,6 @@ def select_sort(lst):
 def merge(lst, left, mid, right):
     """
     merge the list, assume the left/right list is arranged.
-    :param lst:
-    :param left:
-    :param mid:
-    :param right:
-    :return:
     """
     llst = lst[left:mid+1]
     rlst = lst[mid+1:right+1]
@@ -84,11 +77,6 @@ def merge(lst, left, mid, right):
     assert k == right+1
 
 def merge_sort(lst, begin, end):
-    """
-    select mid index, then sort the left list and the right list, then merge the left and right list
-    :param end: the idnex of the last element in list.
-    :return:
-    """
     assert lst != [] and end >= begin
 
     if begin >= end:
